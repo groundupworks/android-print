@@ -20,14 +20,14 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/desibelle/android-print.git</connection>
-        <developerConnection>scm:git:git@github.com:desibelle/android-print.git</developerConnection>
-        <url>git@github.com:desibelle/android-print</url>
+        <connection>scm:git:git://github.com/groundupworks/android-print.git</connection>
+        <developerConnection>scm:git:git@github.com:groundupworks/android-print.git</developerConnection>
+        <url>git@github.com:groundupworks/android-print</url>
     </scm>
 
     <developers>
         <developer>
-            <id>desibelle</id>
+            <id>groundupworks</id>
             <name>Ground Up Works</name>
             <email>ground.up.works@gmail.com</email>
         </developer>
