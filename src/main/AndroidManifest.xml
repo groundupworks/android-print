@@ -2,6 +2,7 @@
     package="com.github.dpsm.android.print">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-sdk android:minSdkVersion="9"/>
     <application></application>
 
 </manifest>

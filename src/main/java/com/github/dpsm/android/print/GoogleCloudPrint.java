@@ -17,8 +17,16 @@ package com.github.dpsm.android.print;
 
 import android.text.TextUtils;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+
+import java.net.HttpURLConnection;
+import java.util.concurrent.TimeUnit;
+
 import retrofit.RestAdapter;
+import retrofit.client.OkClient;
 import retrofit.client.Response;
+import retrofit.client.UrlConnectionClient;
 import retrofit.http.Header;
 import retrofit.http.Part;
 import retrofit.http.Query;
@@ -38,13 +46,39 @@ public class GoogleCloudPrint implements GoogleCloudPrintApi {
 
     private final GoogleCloudPrintApi mGoogleCloudPrintApi;
 
-    public GoogleCloudPrint() {
+    private static final class Config {
+        private long timeout = 2 * 1000;
+
+        public static Config create() {
+            return new Config();
+        }
+
+        private Config() {
+            // Not meant to be instantiated...
+        }
+
+        public Config withTimeout(final long timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+    }
+
+    public GoogleCloudPrint(final Config config) {
+        final OkHttpClient httpClient = new OkHttpClient();
+        httpClient.setConnectTimeout(config.timeout, TimeUnit.MILLISECONDS);
+        httpClient.setReadTimeout(config.timeout, TimeUnit.MILLISECONDS);
+
         final RestAdapter restAdapter = new RestAdapter.Builder()
             .setEndpoint("https://www.google.com/cloudprint")
             .setLogLevel(RestAdapter.LogLevel.NONE)
+            .setClient(new OkClient(httpClient))
             .build();
 
         mGoogleCloudPrintApi = restAdapter.create(GoogleCloudPrintApi.class);
+    }
+
+    public GoogleCloudPrint() {
+        this(Config.create());
     }
 
     GoogleCloudPrint(final GoogleCloudPrintApi googleCloudPrintApi) {
@@ -124,4 +158,5 @@ public class GoogleCloudPrint implements GoogleCloudPrintApi {
     private static String formatToken(final String token) {
         return String.format(BEARER_TOKEN_FORMAT, token);
     }
+
 }
