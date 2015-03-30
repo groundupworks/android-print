@@ -5,11 +5,11 @@
     <groupId>com.groundupworks.android</groupId>
     <artifactId>cloud-print</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>aar</packaging>
 
     <name>Google Cloud Print</name>
-    <description>Android Google Could Print client library.</description>
-    <url>http://www.groundupworks.com/</url>
+    <description>Android Google Cloud Print client library</description>
+    <url>http://www.groundupworks.com</url>
 
     <licenses>
         <license>
