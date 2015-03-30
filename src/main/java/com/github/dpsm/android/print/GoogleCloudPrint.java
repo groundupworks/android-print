@@ -47,7 +47,7 @@ public class GoogleCloudPrint implements GoogleCloudPrintApi {
     private final GoogleCloudPrintApi mGoogleCloudPrintApi;
 
     private static final class Config {
-        private long timeout = 2 * 1000;
+        private long timeout = TimeUnit.MINUTES.toMillis(2);
 
         public static Config create() {
             return new Config();
