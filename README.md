@@ -115,4 +115,4 @@ mGoogleCloudPrint.submitPrintJob(token, selectedPrinter.getId(), file.getName(),
 
 
   [1]: https://github.com/Netflix/RxJava
-  [2]: https://github.com/dpsm/android-auth
+  [2]: https://github.com/groundupworks/android-auth

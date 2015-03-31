@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.dpsm</groupId>
-    <artifactId>android-print</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <groupId>com.groundupworks.android</groupId>
+    <artifactId>cloud-print</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>aar</packaging>
 
-    <name>Android Print</name>
-    <description>Android Google Could Print client library.</description>
-    <url>https://github.com/dpsm/android-print</url>
+    <name>Google Cloud Print</name>
+    <description>Android Google Cloud Print client library</description>
+    <url>http://www.groundupworks.com</url>
 
     <licenses>
         <license>
@@ -20,16 +20,16 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/dpsm/android-print.git</connection>
-        <developerConnection>scm:git:git@github.com:dpsm/android-print.git</developerConnection>
-        <url>git@github.com:dpsm/android-print</url>
+        <connection>scm:git:git://github.com/groundupworks/android-print.git</connection>
+        <developerConnection>scm:git:git@github.com:groundupworks/android-print.git</developerConnection>
+        <url>git@github.com:groundupworks/android-print</url>
     </scm>
 
     <developers>
         <developer>
-            <id>dpsm</id>
-            <name>David Marques</name>
-            <email>dpsmarques@gmail.com</email>
+            <id>groundupworks</id>
+            <name>Ground Up Works</name>
+            <email>ground.up.works@gmail.com</email>
         </developer>
     </developers>
 
@@ -59,7 +59,7 @@
         <dependency>
             <groupId>android</groupId>
             <artifactId>android</artifactId>
-            <version>4.4.2_r3</version>
+            <version>4.4.2_r4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -105,6 +105,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
 
