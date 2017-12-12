@@ -54,7 +54,9 @@ public class GsonPrinterSearchResultOperatorTest extends TestCase {
 
         jsonObject.add(PrinterSearchResult.PRINTERS, array);
 
-        final Response response = new Response("", 200, "OK", new ArrayList<Header>(), new TypedString(jsonObject.toString()));
+        final Response[] response = {
+                new Response("", 200, "OK", new ArrayList<Header>(), new TypedString(jsonObject.toString()))
+        };
 
         final GsonPrinterSearchResultObserver observer = Mockito.mock(GsonPrinterSearchResultObserver.class);
         Observable.from(response).lift(new GsonPrinterSearchResultOperator()).subscribe(observer);
@@ -71,7 +73,9 @@ public class GsonPrinterSearchResultOperatorTest extends TestCase {
 
     @Test
     public void givenResponseWithFailureWhenSubscribedThenOnError() {
-        final Response response = new Response("", 401, "OK", new ArrayList<Header>(), new TypedString(""));
+        final Response[] response = {
+                new Response("", 401, "OK", new ArrayList<Header>(), new TypedString(""))
+        };
 
         final GsonPrinterSearchResultObserver observer = Mockito.mock(GsonPrinterSearchResultObserver.class);
         Observable.from(response).lift(new GsonPrinterSearchResultOperator()).subscribe(observer);
