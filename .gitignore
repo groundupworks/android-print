@@ -25,7 +25,6 @@ proguard/
 # Mac OS
 .DS_Store
 
-target/
+# IntelliJ IDEA
 .idea/
-gen-external-apklibs/
-local.properties
+*.iml
